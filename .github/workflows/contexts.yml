@@ -3,5 +3,8 @@ on: push
 jobs:
     print:
         runs-on: ubuntu-latest
+        env:
+            ACTOR: ${{ github.actor }}
+            REPOSITORY: ${{ github.repository }}
         steps:
-            - run: echo "${{ github.actor }} is pushing to ${{ github.repository }}"
+            - run: echo "${ACTOR} is pushing to ${REPOSITORY}"
